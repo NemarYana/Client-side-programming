@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Задания на работу с DOM</title>
+        <link rel="stylesheet" href="./style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&subset=cyrillic&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="workspace">
+            <div class="workspace__form">
+                <form class="form" onsubmit="return renderCard(this)">
+                    <div class="form__header">
+                        <div class="form__title">Конструктор визиток</div>
+                    </div>
+                    <div class="form__field">
+                        <label class="form__label">Наименование организации</label>
+                        <input type="text" class="form__control" name="organization" value="ООО &quot;Ориентир&quot;">
+                    </div>
+                    <div class="form__field">
+                        <label class="form__label">Фамилия, имя, отчество</label>
+                        <input type="text" class="form__control" name="fio" value="Фёдоров Иван Семенович">
+                    </div>
+                    <div class="form__field">
+                        <label class="form__label">Должность</label>
+                        <input type="text" class="form__control" name="position" value="Менеджер по развитию">
+                    </div>
+                    <div class="form__field">
+                        <label class="form__label">Телефон</label>
+                        <input type="text" class="form__control" name="contact--phone" value="8 (999) 123-45-67">
+                    </div>
+                    <div class="form__field">
+                        <label class="form__label">E-mail</label>
+                        <input type="text" class="form__control" name="contact--email" value="fedorov.is@orientir.org">
+                    </div>
+                    <div class="form__field">
+                        <label class="form__label">Адрес</label>
+                        <input type="text" class="form__control" name="contact--address" value="Иркутск, Байкальская, 421, оф. 12">
+                    </div>
+                    <div class="form__footer">
+                        <button type="submit" class="btn">Применить</button>
+                    </div>
+                </form>
+            </div>
+            <div class="workspace__result">
+                <div class="b-card">
+                    <div class="b-card__organization">ООО "Ориентир"</div>
+                    <div class="b-card__fio">Фёдоров Иван Семенович</div>
+                    <div class="b-card__position">Менеджер по развитию</div>
+                    <div class="b-card__contact b-card__contact--phone">8 (999) 123-45-67</div>
+                    <div class="b-card__contact b-card__contact--email">fedorov.is@orientir.org</div>
+                    <div class="b-card__contact b-card__contact--address">Иркутск, Байкальская, 421, оф. 12</div>
+                </div>
+            </div>
+        </div>
+        <script src="./script.js"></script>
+    </body>
+</html>

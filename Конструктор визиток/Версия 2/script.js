@@ -37,5 +37,4 @@
 
       return false;
     }
-    renderCard(document.querySelector('.form'));
 })();

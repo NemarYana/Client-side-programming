@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    background: #eee;
+    color: #222;
+}
+
+.workspace {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+}
+
+.tasks {
+    background: #fff;
+    padding: 32px 16px;
+    min-height: 100vh;
+}
+
+.tasks__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.tasks__title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.tasks__add {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: #707070;
+    cursor: pointer;
+}
+
+.tasks__add::before {
+    content: "+";
+    font-weight: bolder;
+    font-size: 20px;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    background: #707070;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 40px;
+    padding: 0 8px;
+}
+
+.task:nth-child(odd) {
+    background: #0606060A;
+}
+
+.task__text {
+    flex: 1;
+}
+
+.task__done {
+    appearance: none;
+    -webkit-appearance: none;
+    position: relative;
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    background: #707070;
+    cursor: pointer;
+}
+
+.task__done:checked::after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 6px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.task__priority {
+    display: none;
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+    color: #D10B0B;
+}
+
+.task__priority::before {
+    content: "\03DF";
+}
+
+.task--important .task__priority {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.task__btn {
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.task__btn--edit::before {
+    content: "\270E";
+}
+
+.task__btn--delete::before {
+    content: "\1F5D1\FE0E";
+}
+
+.task__done:checked ~ .task__text {
+    text-decoration: line-through;
+    color: #707070;
+}
+
+.task__done:checked ~ .task__priority,
+.task__done:checked ~ .task__btn {
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+.form {
+    position: fixed;
+    top: 56px;
+    left: 50%;
+    width: 448px;
+    padding: 24px;
+    background: #fff;
+    border-radius: 16px;
+}
+
+.form__title {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.form__field {
+    margin-bottom: 16px;
+}
+
+.form__label {
+    display: block;
+    font-size: 14px;
+    color: #707070;
+    margin-bottom: 4px;
+}
+
+.form__control {
+    display: block;
+    width: 100%;
+    padding: 4px;
+    border: 1px solid #AAAAAABF;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form__check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #707070;
+    cursor: pointer;
+}
+
+.form__check input {
+    appearance: none;
+    -webkit-appearance: none;
+    position: relative;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    border-radius: 4px;
+    background: #707070;
+    cursor: pointer;
+}
+
+.form__check input:checked::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 4px;
+    height: 8px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.form__check .task__priority {
+    display: block;
+}
+
+.form__footer {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.btn {
+  padding: 5px 20px;
+  border-radius: 24px;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn--save {
+    background: #3F88E8;
+    border: none;
+    color: #fff;
+}
+
+.btn--save:hover {
+    background: #2a6fd4;
+}
+
+.btn--cancel {
+    background: #fff;
+    border: 1px solid #707070;
+    color: #707070;
+}
+
+.btn--cancel:hover {
+    background: #f0f0f0;
+}

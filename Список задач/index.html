@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Список задач</title>
+        <link rel="stylesheet" href="./style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&subset=cyrillic&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="workspace">
+            <div class="tasks">
+                <div class="tasks__header">
+                    <div class="tasks__title">Список задач</div>
+                    <button type="button" class="tasks__add">Добавить</button>
+                </div>
+                <div class="tasks__list">
+                    <div class="task task--important">
+                        <input type="checkbox" class="task__done">
+                        <span class="task__priority"></span>
+                        <span class="task__text">Задача 1</span>
+                        <button type="button" class="task__btn task__btn--edit"></button>
+                        <button type="button" class="task__btn task__btn--delete"></button>
+                    </div>
+                    <div class="task">
+                        <input type="checkbox" class="task__done">
+                        <span class="task__priority"></span>
+                        <span class="task__text">Задача 2</span>
+                        <button type="button" class="task__btn task__btn--edit"></button>
+                        <button type="button" class="task__btn task__btn--delete"></button>
+                    </div>
+                </div>
+            </div>
+            <form class="form" onsubmit="return saveTask(this)" hidden>
+                <div class="form__title">Карточка задачи</div>
+                <div class="form__field">
+                    <label class="form__label">Задача</label>
+                    <input type="text" class="form__control" name="task" placeholder="Описание задачи" required>
+                </div>
+                <label class="form__check">
+                    <input type="checkbox" name="important">Высокий приоритет
+                    <span class="task__priority"></span>
+                </label>
+                <div class="form__footer">
+                    <button type="submit" class="btn btn--save">Сохранить</button>
+                    <button type="button" class="btn btn--cancel">Отменить</button>
+                </div>
+            </form>
+        </div>
+        <template class="task-template">
+            <div class="task">
+                <input type="checkbox" class="task__done">
+                <span class="task__priority"></span>
+                <span class="task__text"></span>
+                <button type="button" class="task__btn task__btn--edit"></button>
+                <button type="button" class="task__btn task__btn--delete"></button>
+            </div>
+        </template>
+        <script src="./script.js"></script>
+    </body>
+</html>
